@@ -1,0 +1,10 @@
+.space_between {
+    width: 100%;
+    display: flex;
+    border: 1px solid red;
+}
+.space_between th {
+    /* margin-left: 5rem; */
+    margin: auto;
+    width: 16rem;
+}
