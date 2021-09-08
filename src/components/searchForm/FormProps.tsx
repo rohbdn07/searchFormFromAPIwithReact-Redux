@@ -1,10 +1,19 @@
 import React from 'react'
+import './style.css'
 
-export default function FormProps(props: any): JSX.Element {
+interface IFormPropsTypes {
+  readonly inputField: any
+  readonly inputsHandlerChange: (inputField: any) => void
+  readonly selectedHandlerChange: any
+  readonly submitHandler: () => void
+  readonly selectField: string
+}
+
+export default function FormProps(props: IFormPropsTypes): JSX.Element {
   const { inputField, inputsHandlerChange, selectedHandlerChange, submitHandler, selectField } = props
   return (
     <>
-      <form className="d-block" onSubmit={submitHandler}>
+      <form className="d-block card form" onSubmit={submitHandler}>
         <div className="d-sm-block col-lg-5 col-12 card-body">
           <div className="mb-3">
             <label htmlFor="exampleInputText" className="form-label">
@@ -29,7 +38,7 @@ export default function FormProps(props: any): JSX.Element {
             <option value="Author">Author</option>
             <option value="Title">Title</option>
           </select>
-          <button type="button" className="btn btn-outline-primary mt-3" onClick={submitHandler}>
+          <button type="button" className="btn btn-outline-dark mt-3" onClick={submitHandler}>
             Search
           </button>
         </div>
