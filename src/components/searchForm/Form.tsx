@@ -4,15 +4,15 @@ import { getDataAction } from '../../redux/action/getData-action'
 import FormProps from './FormProps'
 import { RootState } from '../../redux/reducers/index'
 
-type SearchState = {
-  search_for: string
+type SearchState<T> = {
+  search_for: T
 }
 
 export default function Form(): JSX.Element {
   const dispatch = useDispatch()
   const { pageCount } = useSelector((state: RootState) => state.dataReducer)
   console.log('the page count is', pageCount)
-  const [inputField, setInputField] = React.useState<SearchState>({
+  const [inputField, setInputField] = React.useState<SearchState<string | null>>({
     search_for: '',
   })
 
@@ -24,7 +24,7 @@ export default function Form(): JSX.Element {
     })
   }
 
-  const selectedHandlerChange = (e: React.FormEvent<HTMLInputElement>) => {
+  const selectedHandlerChange = (e: React.FormEvent<HTMLInputElement>): void => {
     setSelectField(e.currentTarget.value)
   }
 
