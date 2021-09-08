@@ -11,6 +11,9 @@
         "autoFix": true
       }
     ],
+    
+    "eslint.workingDirectories": ["./searchapp"],
+    
     "[javascript]": {
       "editor.defaultFormatter": "esbenp.prettier-vscode"
     },

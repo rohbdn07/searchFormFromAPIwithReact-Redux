@@ -29,6 +29,6 @@ module.exports = {
     'sort-imports': 'off',
     'no-unused-vars': 'off',
     // Place to specify ESLint rules. Can be used to overwrite rules specified from the extended configs
-    '@typescript-eslint/explicit-function-return-type': 'off',
+    // '@typescript-eslint/explicit-function-return-type': 'off',
   },
 }
