@@ -31,14 +31,6 @@
     "lint": "eslint './src/**/*.{ts,tsx}'",
     "eject": "react-scripts eject"
   },
-  "eslintConfig": {
-    "extends": [
-      "react-app",
-      "react-app/jest",
-      "plugin:react/recommended",
-      "plugin:@typescript-eslint/recommended"
-    ]
-  },
   "browserslist": {
     "production": [
       ">0.2%",
