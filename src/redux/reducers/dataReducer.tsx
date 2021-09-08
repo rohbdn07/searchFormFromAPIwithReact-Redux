@@ -6,9 +6,10 @@ import { IBook } from '../../model/Book'
 const initalState: BookState = {
   allData: [],
   totalItems: 0,
+  pageCount: 0,
 }
 
-export default function dataReducer(state = initalState, action: BookAction): any {
+export default function dataReducer(state = initalState, action: BookAction): BookState {
   switch (action.type) {
     case GET_SEARCH_DATA:
       const { resultCount, records } = action.payload
