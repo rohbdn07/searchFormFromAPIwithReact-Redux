@@ -4,6 +4,8 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 ## Prerequisties
 
+These are the prerequisties necessary to run the app. Make sure you have installed beforehand.
+
 [nodejs](https://nodejs.org/en/)
 
 [yarn](https://yarnpkg.com/en/docs/install)
