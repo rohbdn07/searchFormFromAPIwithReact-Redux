@@ -6,6 +6,8 @@ This project is written in Typescript (superset of Javascript).
 
 ## Prerequisties
 
+These are the prerequisties necessary to run the app. Make sure you have installed beforehand.
+
 [nodejs](https://nodejs.org/en/)
 
 [yarn](https://yarnpkg.com/en/docs/install)
