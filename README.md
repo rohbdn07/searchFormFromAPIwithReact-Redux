@@ -39,7 +39,7 @@ You will also see any lint errors in the console.
 
 ### `yarn run lint`
 
-Checks the code style. To fix some of the problems automatically run
+Checks the code style. To fix some of the problems automatically run:
 
 ```
 $ yarn run lint --fix
