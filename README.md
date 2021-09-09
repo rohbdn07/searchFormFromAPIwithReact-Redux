@@ -4,6 +4,10 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 This project is written in Typescript (superset of Javascript).
 
+Deployed at Heroku:
+
+### `https://find-the-books.herokuapp.com/`
+
 ## Prerequisties
 
 These are the prerequisties necessary to run the app. Make sure you have installed beforehand.
