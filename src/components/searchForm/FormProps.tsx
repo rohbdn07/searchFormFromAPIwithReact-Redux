@@ -9,8 +9,32 @@ interface IFormPropsTypes {
   readonly selectField: string
 }
 
-export default function FormProps(props: IFormPropsTypes): JSX.Element {
+const FormProps: React.FC<IFormPropsTypes> = (props) => {
   const { inputField, inputsHandlerChange, selectedHandlerChange, submitHandler, selectField } = props
+
+  const renderInput: JSX.Element = (
+    <input
+      type="text"
+      name="author_name"
+      className="form-control"
+      aria-describedby="emailHelp"
+      value={inputField.search_for}
+      onChange={inputsHandlerChange}
+      placeholder={`Enter name of ${selectField}`}
+    />
+  )
+  const renderSelectOption: JSX.Element = (
+    <select
+      className="form-select"
+      aria-label="Default select example"
+      onChange={selectedHandlerChange}
+      value={selectField}
+    >
+      <option value="Author">Author</option>
+      <option value="Title">Title</option>
+    </select>
+  )
+
   return (
     <>
       <form className="d-block card form" onSubmit={submitHandler}>
@@ -19,25 +43,9 @@ export default function FormProps(props: IFormPropsTypes): JSX.Element {
             <label htmlFor="exampleInputText" className="form-label">
               Search for:
             </label>
-            <input
-              type="text"
-              name="author_name"
-              className="form-control"
-              aria-describedby="emailHelp"
-              value={inputField.search_for}
-              onChange={inputsHandlerChange}
-              placeholder={`Enter name of ${selectField}`}
-            />
+            {renderInput}
           </div>
-          <select
-            className="form-select"
-            aria-label="Default select example"
-            onChange={selectedHandlerChange}
-            value={selectField}
-          >
-            <option value="Author">Author</option>
-            <option value="Title">Title</option>
-          </select>
+          {renderSelectOption}
           <button type="button" className="btn btn-outline-dark mt-3" onClick={submitHandler}>
             Search
           </button>
@@ -50,3 +58,5 @@ export default function FormProps(props: IFormPropsTypes): JSX.Element {
     </>
   )
 }
+
+export default FormProps

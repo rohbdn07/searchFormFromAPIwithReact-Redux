@@ -2,7 +2,7 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 import bookLogo from '../../assists/book01.png'
 
-export default function NavBar() {
+const NavBar = () => {
   return (
     <>
       <nav className="navbar navbar-dark bg-dark container">
@@ -14,3 +14,5 @@ export default function NavBar() {
     </>
   )
 }
+
+export default NavBar

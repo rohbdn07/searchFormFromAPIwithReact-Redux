@@ -8,7 +8,7 @@ type SearchState<T> = {
   search_for: T
 }
 
-export default function Form(): JSX.Element {
+const Form: React.FC = () => {
   const dispatch = useDispatch()
   const { pageCount } = useSelector((state: RootState) => state.dataReducer)
   console.log('the page count is', pageCount)
@@ -75,3 +75,5 @@ export default function Form(): JSX.Element {
     </>
   )
 }
+
+export default Form

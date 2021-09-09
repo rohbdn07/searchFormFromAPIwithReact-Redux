@@ -1,7 +1,7 @@
 import React from 'react'
 import { IBook } from '../../model/Book'
 
-export default function ItemProps(props: IBook): JSX.Element {
+const ItemProps: React.FC<IBook> = (props): JSX.Element => {
   const { index, title, year, cleanIsbn } = props
 
   return (
@@ -15,3 +15,5 @@ export default function ItemProps(props: IBook): JSX.Element {
     </>
   )
 }
+
+export default ItemProps

@@ -34,11 +34,8 @@ export default function Item(): JSX.Element {
     dispatch(getPageAction(pageNumber + selected))
   }
 
-  return (
+  const renderTableList: JSX.Element = (
     <>
-      <div>
-        <p>{`The total item(s) listed are: ${totalItems} `}</p>
-      </div>
       <div className="container">
         {!allData ? (
           <div>
@@ -59,6 +56,15 @@ export default function Item(): JSX.Element {
           </table>
         )}
       </div>
+    </>
+  )
+
+  return (
+    <>
+      <div>
+        <p>{`The total item(s) listed are: ${totalItems} `}</p>
+      </div>
+      {renderTableList}
       <div className="container d-flex justify-content-center">
         <ReactPaginate
           pageCount={Math.ceil(totalItems / booksPerPage)}
