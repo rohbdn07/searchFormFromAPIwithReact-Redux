@@ -5,6 +5,7 @@ import { useSelector, useDispatch } from 'react-redux'
 import './item.css'
 import { getPageAction } from '../../redux/action/getPage-action'
 import { RootState } from '../../redux/reducers'
+import { IBook } from '../../model/Book'
 
 export default function Item(): JSX.Element {
   const dispatch = useDispatch()
@@ -14,7 +15,7 @@ export default function Item(): JSX.Element {
   const booksPerPage = 20
 
   const displayBooks = allData
-    ? allData.map((item: any, index: number) => {
+    ? allData.map((item: IBook, index: number) => {
         return (
           <ItemProps
             key={index}

@@ -5,6 +5,6 @@ export interface IBook {
   year: number
   cleanIsbn: number
   resultCount?: number
-  records?: []
+  records?: any[]
   pageNumber?: number
 }
