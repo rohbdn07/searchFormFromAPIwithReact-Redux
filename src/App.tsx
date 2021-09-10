@@ -1,7 +1,7 @@
-import React from 'react'
-import NavBar from './components/navbar/NavBar'
-import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom'
-import FormPage from './pages/formPage/FormPage'
+import React from 'react';
+import NavBar from './components/navbar/NavBar';
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+import FormPage from './pages/formPage/FormPage';
 
 function App(): JSX.Element {
   return (
@@ -17,7 +17,7 @@ function App(): JSX.Element {
         </Switch>
       </Router>
     </div>
-  )
+  );
 }
 
-export default App
+export default App;

@@ -1,6 +1,6 @@
-import React from 'react'
-import { Link } from 'react-router-dom'
-import bookLogo from '../../assists/book01.png'
+import React from 'react';
+import { Link } from 'react-router-dom';
+import bookLogo from '../../assists/book01.png';
 
 const NavBar = () => {
   return (
@@ -12,7 +12,7 @@ const NavBar = () => {
         </Link>
       </nav>
     </>
-  )
-}
+  );
+};
 
-export default NavBar
+export default NavBar;

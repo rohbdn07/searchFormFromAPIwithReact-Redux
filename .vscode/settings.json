@@ -11,7 +11,9 @@
         "autoFix": true
       }
     ],
-    
+     "editor.codeActionsOnSave": {
+        "source.fixAll.eslint": true
+    },
     "eslint.workingDirectories": ["./searchapp"],
     
     "[javascript]": {

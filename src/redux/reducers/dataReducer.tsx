@@ -1,33 +1,32 @@
-import { GET_PAGE_COUNT, GET_SEARCH_DATA } from '../constants/action-types'
-import { BookState } from '../../model/BookState'
-import { BookAction } from '../../model/BookAction'
-import { IBook } from '../../model/Book'
+import { BookState } from '../../model/BookState';
+import { ActionType } from '../actions/action-types';
+import { Action } from '../actions/action';
 
 const initalState: BookState = {
   allData: [],
   totalItems: 0,
   pageCount: 0,
-}
+};
 
-export default function dataReducer(state = initalState, action: BookAction): BookState {
+export default function dataReducer(state = initalState, action: Action): BookState {
   switch (action.type) {
-    case GET_SEARCH_DATA:
-      const { resultCount, records } = action.payload
+    case ActionType.GET_SEARCH_DATA:
+      const { resultCount, records } = action.payload;
       return {
         ...state,
         allData: records,
         totalItems: resultCount,
-      }
-      break
-    case GET_PAGE_COUNT:
-      const { pageNumber }: IBook = action.payload
+      };
+      break;
+    case ActionType.GET_PAGE_COUNT:
+      const { pageNumber } = action.payload;
       return {
         ...state,
         pageCount: pageNumber,
-      }
+      };
 
     default:
-      return state
-      break
+      return state;
+      break;
   }
 }

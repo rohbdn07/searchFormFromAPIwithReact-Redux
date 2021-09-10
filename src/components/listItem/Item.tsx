@@ -1,18 +1,20 @@
-import React from 'react'
-import ReactPaginate from 'react-paginate'
-import ItemProps from './ItemProps'
-import { useSelector, useDispatch } from 'react-redux'
-import './item.css'
-import { getPageAction } from '../../redux/action/getPage-action'
-import { RootState } from '../../redux/reducers'
-import { IBook } from '../../model/Book'
+import React from 'react';
+import ReactPaginate from 'react-paginate';
+import ItemProps from './ItemProps';
+import { useSelector, useDispatch } from 'react-redux';
+import { bindActionCreators } from 'redux';
+import './item.css';
+import { actionCreators } from '../../redux/index';
+import { RootState } from '../../redux/reducers';
+import { IBook } from '../../model/Book';
 
 export default function Item(): JSX.Element {
-  const dispatch = useDispatch()
-  const [pageNumber, setPageNumber] = React.useState<number>(1)
-  const [currentPage, setcurrentPage] = React.useState<number>(0)
-  const { allData, totalItems } = useSelector((state: RootState) => state.dataReducer)
-  const booksPerPage = 20
+  const dispatch = useDispatch();
+  const { getPageAction } = bindActionCreators(actionCreators, dispatch);
+  const [pageNumber, setPageNumber] = React.useState<number>(1);
+  const [currentPage, setcurrentPage] = React.useState<number>(0);
+  const { allData, totalItems } = useSelector((state: RootState) => state.dataReducer);
+  const booksPerPage = 20;
 
   const displayBooks = allData
     ? allData.map((item: IBook, index: number) => {
@@ -25,14 +27,15 @@ export default function Item(): JSX.Element {
             year={item.year}
             cleanIsbn={item.cleanIsbn}
           />
-        )
+        );
       })
-    : null
+    : null;
 
   const changePage = ({ selected }: any) => {
-    setcurrentPage(selected)
-    dispatch(getPageAction(pageNumber + selected))
-  }
+    setcurrentPage(selected);
+    // dispatch(actionCreators.getPageAction(pageNumber + selected))
+    getPageAction(pageNumber + selected);
+  };
 
   const renderTableList: JSX.Element = (
     <>
@@ -57,7 +60,7 @@ export default function Item(): JSX.Element {
         )}
       </div>
     </>
-  )
+  );
 
   return (
     <>
@@ -86,5 +89,5 @@ export default function Item(): JSX.Element {
         />
       </div>
     </>
-  )
+  );
 }
