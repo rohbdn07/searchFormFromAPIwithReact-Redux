@@ -1,8 +1,8 @@
-import React from 'react'
-import { IBook } from '../../model/Book'
+import React from 'react';
+import { IBook } from '../../model/Book';
 
 const ItemProps: React.FC<IBook> = (props): JSX.Element => {
-  const { index, title, year, cleanIsbn } = props
+  const { index, title, year, cleanIsbn } = props;
 
   return (
     <>
@@ -13,7 +13,7 @@ const ItemProps: React.FC<IBook> = (props): JSX.Element => {
         <td>{cleanIsbn}</td>
       </tr>
     </>
-  )
-}
+  );
+};
 
-export default ItemProps
+export default ItemProps;

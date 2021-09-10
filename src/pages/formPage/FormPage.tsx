@@ -1,6 +1,6 @@
-import React from 'react'
-import Item from '../../components/listItem/Item'
-import Form from '../../components/searchForm/Form'
+import React from 'react';
+import Item from '../../components/listItem/Item';
+import Form from '../../components/searchForm/Form';
 
 export default function FormPage(): JSX.Element {
   return (
@@ -8,5 +8,5 @@ export default function FormPage(): JSX.Element {
       <Form />
       <Item />
     </>
-  )
+  );
 }

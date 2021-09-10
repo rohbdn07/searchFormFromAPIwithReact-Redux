@@ -1,7 +1,7 @@
-import { IBook } from './Book'
+import { IBook } from './Book';
 
 export interface BookAction {
-  type: string
-  allData: IBook
-  payload: IBook
+  type: string;
+  allData: IBook;
+  payload: IBook;
 }

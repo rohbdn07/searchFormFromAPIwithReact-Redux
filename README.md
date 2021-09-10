@@ -1,12 +1,17 @@
 # Find-the-books (searcing app)
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This project was bootstrapped with [Create React App --tamplate typescript](https://github.com/facebook/create-react-app).
 
 This project is written in Typescript (superset of Javascript).
+The project includes state-management with Redux and Redux-thunk.
 
 Deployed at Heroku:
 
 ### `https://find-the-books.herokuapp.com/`
+
+Screenshot:
+
+![find-the-books-image02](https://user-images.githubusercontent.com/57314666/132920124-4e6f01b9-7847-4270-9b77-6af2db1188e0.png)
 
 ## Prerequisties
 
