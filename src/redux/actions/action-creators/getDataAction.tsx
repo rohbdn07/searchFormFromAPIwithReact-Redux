@@ -1,3 +1,4 @@
+import axios from 'axios';
 import { ActionType } from '../action-types';
 import { Dispatch } from 'redux';
 import { Action } from '../action';
@@ -15,16 +16,26 @@ type DataTypes = {
 export const getDataAction = (queryString: string) => {
   return async (dispatch: Dispatch<Action>) => {
     try {
-      const response = await axiosInstance.get(`v1/search?${queryString}`);
+      const cancelTokenSource = axios.CancelToken.source();
+      const response = await axiosInstance.get(`v1/search?${queryString}`, {
+        cancelToken: cancelTokenSource.token,
+      });
       const data: DataTypes = await response.data;
-      return dispatch({
+      dispatch({
         type: ActionType.GET_SEARCH_DATA,
         payload: {
           resultCount: data.resultCount,
           records: data.records,
         },
       });
+      cancelTokenSource.cancel();
     } catch (error) {
+      dispatch({
+        type: ActionType.GET_SEARCH_DATA_ERROR,
+        payload: {
+          errorMessage: 'opps!Network too slow. Failed to fetch :(',
+        },
+      });
       console.log('there is an error', error);
     }
   };

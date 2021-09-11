@@ -6,6 +6,7 @@ const initalState: BookState = {
   allData: [],
   totalItems: 0,
   pageCount: 0,
+  errorMessage: '',
 };
 
 export default function dataReducer(state = initalState, action: Action): BookState {
@@ -23,6 +24,14 @@ export default function dataReducer(state = initalState, action: Action): BookSt
       return {
         ...state,
         pageCount: pageNumber,
+      };
+      break;
+
+    case ActionType.GET_SEARCH_DATA_ERROR:
+      const { errorMessage } = action.payload;
+      return {
+        ...state,
+        errorMessage,
       };
 
     default:

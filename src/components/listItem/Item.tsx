@@ -13,7 +13,7 @@ export default function Item(): JSX.Element {
   const { getPageAction } = bindActionCreators(actionCreators, dispatch);
   const [pageNumber, setPageNumber] = React.useState<number>(1);
   const [currentPage, setcurrentPage] = React.useState<number>(0);
-  const { allData, totalItems } = useSelector((state: RootState) => state.dataReducer);
+  const { allData, totalItems, errorMessage } = useSelector((state: RootState) => state.dataReducer);
   const booksPerPage = 20;
 
   const displayBooks = allData
@@ -36,6 +36,12 @@ export default function Item(): JSX.Element {
     getPageAction(pageNumber + selected);
   };
 
+  const isError: JSX.Element | null = errorMessage ? (
+    <div className="container d-flex justify-content-center align-item-center">
+      <p>{errorMessage}</p>
+    </div>
+  ) : null;
+
   const renderTableList: JSX.Element = (
     <>
       <div className="col-12">
@@ -55,6 +61,8 @@ export default function Item(): JSX.Element {
               </tr>
             </thead>
 
+            {isError}
+
             <tbody className="tablelist">{displayBooks}</tbody>
           </table>
         )}
@@ -67,7 +75,9 @@ export default function Item(): JSX.Element {
       <div className="totalItem_header">
         <p>{`The total item(s) listed are: ${totalItems}`}</p>
       </div>
+
       {renderTableList}
+
       <div className="container d-flex justify-content-center col-8">
         <ReactPaginate
           pageCount={Math.ceil(totalItems / booksPerPage)}
