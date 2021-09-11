@@ -5,7 +5,7 @@ import FormPage from './pages/formPage/FormPage';
 
 function App(): JSX.Element {
   return (
-    <div className="col-lg-12">
+    <div className="col-lg-12 col-12">
       <Router>
         <Switch>
           <Route path="/">

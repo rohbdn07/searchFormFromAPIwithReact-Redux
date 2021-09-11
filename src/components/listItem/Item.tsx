@@ -33,13 +33,12 @@ export default function Item(): JSX.Element {
 
   const changePage = ({ selected }: any) => {
     setcurrentPage(selected);
-    // dispatch(actionCreators.getPageAction(pageNumber + selected))
     getPageAction(pageNumber + selected);
   };
 
   const renderTableList: JSX.Element = (
     <>
-      <div className="container">
+      <div className="col-12">
         {!allData ? (
           <div>
             <h5>oppps! didn"t find the match</h5>
@@ -51,11 +50,12 @@ export default function Item(): JSX.Element {
                 <th scope="col">#</th>
                 <th scope="col">Book's title</th>
                 <th scope="col">Year</th>
+                <th scope="col">Author(s)</th>
                 <th scope="col">Isbn</th>
               </tr>
             </thead>
 
-            <tbody>{displayBooks}</tbody>
+            <tbody className="tablelist">{displayBooks}</tbody>
           </table>
         )}
       </div>
@@ -64,11 +64,11 @@ export default function Item(): JSX.Element {
 
   return (
     <>
-      <div>
-        <p>{`The total item(s) listed are: ${totalItems} `}</p>
+      <div className="totalItem_header">
+        <p>{`The total item(s) listed are: ${totalItems}`}</p>
       </div>
       {renderTableList}
-      <div className="container d-flex justify-content-center">
+      <div className="container d-flex justify-content-center col-8">
         <ReactPaginate
           pageCount={Math.ceil(totalItems / booksPerPage)}
           pageRangeDisplayed={2}
