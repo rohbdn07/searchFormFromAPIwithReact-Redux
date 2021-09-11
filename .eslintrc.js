@@ -24,6 +24,7 @@ module.exports = {
       'error',
       {
         singleQuote: true,
+        semi: true,
       },
     ],
     'sort-imports': 'off',
@@ -31,4 +32,4 @@ module.exports = {
     // Place to specify ESLint rules. Can be used to overwrite rules specified from the extended configs
     // '@typescript-eslint/explicit-function-return-type': 'off',
   },
-}
+};
