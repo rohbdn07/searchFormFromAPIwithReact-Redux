@@ -32,6 +32,7 @@ const Form: React.FC = () => {
   };
 
   const booksPerPage = 20;
+
   useEffect(() => {
     getDataAction(queryString);
   }, [pageCount]);
@@ -51,6 +52,7 @@ const Form: React.FC = () => {
   ];
 
   const queryString: string = queryParams.map(([key, value]) => `${key}=${value}`).join('&');
+
   return (
     <>
       <FormProps

@@ -17,4 +17,11 @@ interface getPageNumber {
   };
 }
 
-export type Action = getAllData | getPageNumber;
+interface getError {
+  type: ActionType.GET_SEARCH_DATA_ERROR;
+  payload: {
+    errorMessage: string;
+  };
+}
+
+export type Action = getAllData | getPageNumber | getError;

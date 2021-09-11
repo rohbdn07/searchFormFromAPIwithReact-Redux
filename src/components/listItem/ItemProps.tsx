@@ -1,4 +1,5 @@
 import React from 'react';
+import { useSelector } from 'react-redux';
 import { IBook } from '../../model/Book';
 
 const ItemProps: React.FC<IBook> = (props): JSX.Element => {
