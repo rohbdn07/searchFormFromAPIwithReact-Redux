@@ -1,6 +1,7 @@
 import { ActionType } from '../action-types';
 import { Dispatch } from 'redux';
 import { Action } from '../action';
+import { axiosInstance } from '../../../services/API_services/axiosInstance';
 
 type DataTypes = {
   resultCount: number;
@@ -14,10 +15,8 @@ type DataTypes = {
 export const getDataAction = (queryString: string) => {
   return async (dispatch: Dispatch<Action>) => {
     try {
-      const response = await fetch(`https://api.finna.fi/api/v1/search?${queryString}`, {
-        headers: { Accept: 'application/json' },
-      });
-      const data: DataTypes = await response.json();
+      const response = await axiosInstance.get(`v1/search?${queryString}`);
+      const data: DataTypes = await response.data;
       return dispatch({
         type: ActionType.GET_SEARCH_DATA,
         payload: {
