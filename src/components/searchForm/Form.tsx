@@ -6,7 +6,7 @@ import { RootState } from '../../redux/reducers/index';
 import { actionCreators } from '../../redux/index';
 
 type SearchState = {
-  search_for: any | null;
+  search_for: string | null;
 };
 
 const Form: React.FC = () => {

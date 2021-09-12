@@ -9,11 +9,11 @@ import { RootState } from '../../redux/reducers';
 import { IBook } from '../../model/Book';
 
 export default function Item(): JSX.Element {
+  const { allData, totalItems, errorMessage } = useSelector((state: RootState) => state.dataReducer);
   const dispatch = useDispatch();
   const { getPageAction } = bindActionCreators(actionCreators, dispatch);
   const [pageNumber, setPageNumber] = React.useState<number>(1);
   const [currentPage, setcurrentPage] = React.useState<number>(0);
-  const { allData, totalItems, errorMessage } = useSelector((state: RootState) => state.dataReducer);
   const booksPerPage = 20;
 
   const displayBooks = allData
